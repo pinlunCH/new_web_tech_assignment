@@ -1,0 +1,57 @@
+<%- include ('partials/header.ejs'); -%>
+<div class="container">
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+
+    <% if (booking) { %>
+        <form class="add-booking-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="first-name">First Name</label>
+                    <input type="text" class="form-control" name="first_name" id="first-name" value="<%= booking.first_name %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" id="last-name" value="<%= booking.last_name %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="employee">employee</label>
+                    <input type="text" class="form-control" name="employee" id="employee" value="<%= booking.employee_name %>" required disabled title="employee cannot be edited.">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="date">date</label>
+                    <input type="date" class="form-control" name="date" id="date" placeholder="date" value="<%= booking.date %>" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="position">Destination</label>
+                    <select id="destination" name="destination" class="form-control" required>
+                        <option selected><%= booking.destination %></option>
+                        <option>Australia</option>
+                        <option>Belgium</option>
+                        <option>Belize</option>
+                        <option>Costa Rica</option>
+                        <option>Ecuador</option>
+                        <option>Egypt</option>
+                        <option>Poland</option>
+                        <option>Spain</option>
+                        <option>Thailand</option>
+                        <option>Greece</option>
+                        <option>USA</option>
+                        <option>Taiwan</option>
+                        <option>Canada</option>
+                        <option>Italy</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success float-right">Update Booking</button>
+        </form>
+    <% } else { %>
+        <p class="text-center">Booking Not Found. Go <a href="/add">here</a> to add Booking.</p>
+    <% } %>
+</div>
+</div>
+</body>
+</html>

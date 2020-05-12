@@ -1,0 +1,51 @@
+<%- include ('partials/header.ejs'); -%>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="add-booking-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="first_name" id="first-name" placeholder="First Name" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="last_name" id="last-name" placeholder="Last Name" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="employee" id="employee" placeholder="employee" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="date" class="form-control" name="date" id="date" placeholder="date" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <select id="destination" name="destination" class="form-control" required>
+                        <option selected disabled>Choose destination</option>
+                        <option>USA</option>
+                        <option>Taiwan</option>
+                        <option>Canada</option>
+                        <option>Italy</option>
+                        <option>Australia</option>
+                        <option>Belgium</option>
+                        <option>Belize</option>
+                        <option>Costa Rica</option>
+                        <option>Ecuador</option>
+                        <option>Egypt</option>
+                        <option>Poland</option>
+                        <option>Spain</option>
+                        <option>Thailand</option>
+                        <option>Greece</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <label for="booking-img"><b>Image</b></label><br>
+                    <input type="file" name="image" id="booking-img" class="" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Add Booking</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
